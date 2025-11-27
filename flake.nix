@@ -65,6 +65,9 @@
             };
           };
 
+
+          ####configuration des services####
+          
           services = {
             # c'est ici qu'on configure les services de notre serveur
 
