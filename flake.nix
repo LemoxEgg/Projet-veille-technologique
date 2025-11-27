@@ -53,6 +53,11 @@
               # d'autre options sont possible bien sûr. mais elle ne sont pas
               # nécéssaires ici, on les laisse par défaut.
 
+              # le mot de passe de l'utilisateur, encrypté bien sûr
+              hashedPassword = "$y$j9T$4T2a4YOIrrhNqvFOfy2Gu.$5mCWgf8amYgt9Hrv/UBo5CryT/gJ.oRQbX089gvpj1.";
+              # (c'est Soleil01)
+              # vous pouvez générer un nouveau mot de passe avec la commande mkpasswd
+
               packages = with pkgs; [
                 # c'est ici que l'on spécifie les programme que l'on
                 # veut installer pour notre utilisateur. il est le
@@ -65,6 +70,11 @@
             };
           };
 
+          # les packages ici seront installé pour tous les
+          # utilisateurs, incluant root
+          environment.systemPackages = with pkgs; [
+            git
+          ];
 
           ####configuration des services####
           
